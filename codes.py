@@ -7,7 +7,7 @@ import google.generativeai as genai
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 st.set_page_config(page_title="AI Stock Dashboard", layout="centered")
-st.title("📊 AI-Powered Stock Dashboard")
+st.title("📊 Enter Stock")
 
 ticker = st.text_input("Enter a stock ticker symbol (e.g. AAPL, TSLA, MSFT):", "AAPL")
 start_date = st.date_input("Start Date", datetime.date(2023, 1, 1))
@@ -43,7 +43,7 @@ if ticker:
             })
 
             # Generate investment thesis prompt
-            st.subheader("🧠 AI-Generated Investment Synopsis")
+            st.subheader("🧠 Investment Thesis")
             summary_prompt = f"""
 You are a financial analyst. Based on the following data for {ticker}, write a clear and concise investment thesis (under 100 words):
 
